@@ -1,0 +1,6 @@
+.env
+data/
+venv_p/
+__pycache__/
+*.pyc
+.idea/

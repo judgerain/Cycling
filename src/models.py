@@ -32,7 +32,7 @@ class Activity:
             distance=data.get("distance", 0.0),
             icu_training_load=data.get("icu_training_load") or 0.0,
             icu_intensity=data.get("icu_intensity") or 0.0,
-            average_watts=data.get("average_watts"),
+            average_watts=data.get("icu_average_watts") or data.get("average_watts"),
             normalized_power=data.get("icu_weighted_avg_watts"),
             average_heartrate=data.get("average_heartrate"),
             total_elevation_gain=data.get("total_elevation_gain"),

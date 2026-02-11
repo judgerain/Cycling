@@ -4,28 +4,67 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-Cycling training project of amateur cyclist.
+Cycling training project of amateur cyclist with Intervals.icu integration for data-driven coaching.
 
 ## Environment
 
 - **Python**: 3.14.3 (CPython)
 - **Virtual environment**: `venv_p/` (activate with `source venv_p/bin/activate`)
 - **IDE**: PyCharm
+- **Dependencies**: `requests`, `python-dotenv`, `tabulate` (see `requirements.txt`)
 
-## Project Files
+## Project Structure
 
-- `training_plan.md` — Overall plan: zones, 25-week periodization, weekly structure, strength plan, progress tracking, feedback format
-- `plan/block_1_base_rebuild.md` — Weeks 1–4 detailed daily workouts with Intervals.icu format
-- Future blocks will be added as `plan/block_N_*.md`
+### Training Plans (source of truth)
+- `training_plan.md` — Master plan: zones (FTP 263W), 25-week periodization, weekly structure, strength plan, progress tracking
+- `plan/block_1_base_rebuild.md` — Weeks 1–4 detailed daily workouts
+- `plan/intervals_format.md` — Intervals.icu workout text format reference
+- Future blocks: `plan/block_N_*.md`
+
+### Intervals.icu Integration (Python)
+- `main.py` — CLI entry point: `fetch`, `analyze`, `plan-week`, `push`, `status`, `zones`
+- `intervals_client.py` — API wrapper (Basic auth, throttle)
+- `fetcher.py` — Pull data → cache to `data/*.json`
+- `analyzer.py` — Weekly summaries, compliance, fatigue, zone drift
+- `planner.py` — Parse `plan/block_*.md` → PlannedWorkout objects
+- `pusher.py` — Convert workouts → API events, bulk upsert
+- `models.py` — Dataclasses (Activity, WellnessDay, FitnessSnapshot, PlannedWorkout, WeekSummary)
+- `display.py` — Terminal formatting (tabulate, ANSI colors)
+
+### Config
+- `config.toml` — Athlete metrics (FTP, weight, zones), plan dates, phase targets
+- `.env` — API key (git-ignored)
+- `data/` — JSON cache (git-ignored)
 
 ## Coaching Context
 
 - **Event**: Pyrenees 2500km / ~70,000m, early August 2026
-- **Schedule**: 5 cycling days + 2 strength days (double up strength AM + cycling PM for 1 full rest day)
-- **Indoor platform**: Rouvy (workouts written in Intervals.icu text format)
+- **Plan start**: Monday Feb 9, 2026 (calendar-aligned, Mon–Sun weeks)
+- **Current FTP**: 263W (Intervals.icu setting), eFTP ~260W
+- **Schedule**: 5 cycling days + 2 strength days, Friday full rest
+- **Indoor platform**: Rouvy (workouts in Intervals.icu text format)
 - **Long rides**: Weekends (Sat/Sun)
-- **No formal FTP tests** — track progress from training data and local climb benchmarks
+- **No formal FTP tests** — track eFTP from Intervals.icu, flag when zones drift >5W
 - **Weekly feedback**: Athlete provides RPE, hours, fatigue ratings → coach adjusts next week
+- **Fatigue guard**: If TSB < -20, reduce power targets by 5%
+
+## Intervals.icu Workout Format
+
+- Use `m` for minutes, `s` for seconds, `h` for hours (e.g. `10m 55%`, `30s 130%`)
+- **Never use `min`** — it displays as text but does not generate structured workout steps
+- Always keep strength (WeightTraining) and cycling (Ride/VirtualRide) as separate table rows — different types break the workout format
+- See `plan/intervals_format.md` for full reference
+
+## CLI Workflow
+
+```
+python main.py fetch              # Pull data from Intervals.icu
+python main.py analyze --week 1   # Weekly summary
+python main.py plan-week --week 1 --dry-run  # Preview parsed workouts
+python main.py push --week 1      # Push to Intervals.icu calendar
+python main.py status             # Fitness dashboard
+python main.py zones              # FTP drift check
+```
 
 ## Project details
 

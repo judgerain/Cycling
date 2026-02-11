@@ -21,15 +21,15 @@ Cycling training project of amateur cyclist with Intervals.icu integration for d
 - `plan/intervals_format.md` — Intervals.icu workout text format reference
 - Future blocks: `plan/block_N_*.md`
 
-### Intervals.icu Integration (Python)
-- `main.py` — CLI entry point: `fetch`, `analyze`, `plan-week`, `push`, `status`, `zones`
-- `intervals_client.py` — API wrapper (Basic auth, throttle)
-- `fetcher.py` — Pull data → cache to `data/*.json`
-- `analyzer.py` — Weekly summaries, compliance, fatigue, zone drift
-- `planner.py` — Parse `plan/block_*.md` → PlannedWorkout objects
-- `pusher.py` — Convert workouts → API events, bulk upsert
-- `models.py` — Dataclasses (Activity, WellnessDay, FitnessSnapshot, PlannedWorkout, WeekSummary)
-- `display.py` — Terminal formatting (tabulate, ANSI colors)
+### Intervals.icu Integration (Python — `src/`)
+- `src/main.py` — CLI entry point: `fetch`, `analyze`, `plan-week`, `push`, `status`, `zones`
+- `src/intervals_client.py` — API wrapper (Basic auth, throttle)
+- `src/fetcher.py` — Pull data → cache to `data/*.json`
+- `src/analyzer.py` — Weekly summaries, compliance, fatigue, zone drift
+- `src/planner.py` — Parse `plan/block_*.md` → PlannedWorkout objects
+- `src/pusher.py` — Convert workouts → API events, bulk upsert
+- `src/models.py` — Dataclasses (Activity, WellnessDay, FitnessSnapshot, PlannedWorkout, WeekSummary)
+- `src/display.py` — Terminal formatting (tabulate, ANSI colors)
 
 ### Config
 - `config.toml` — Athlete metrics (FTP, weight, zones), plan dates, phase targets
@@ -58,12 +58,12 @@ Cycling training project of amateur cyclist with Intervals.icu integration for d
 ## CLI Workflow
 
 ```
-python main.py fetch              # Pull data from Intervals.icu
-python main.py analyze --week 1   # Weekly summary
-python main.py plan-week --week 1 --dry-run  # Preview parsed workouts
-python main.py push --week 1      # Push to Intervals.icu calendar
-python main.py status             # Fitness dashboard
-python main.py zones              # FTP drift check
+python src/main.py fetch              # Pull data from Intervals.icu
+python src/main.py analyze --week 1   # Weekly summary
+python src/main.py plan-week --week 1 --dry-run  # Preview parsed workouts
+python src/main.py push --week 1      # Push to Intervals.icu calendar
+python src/main.py status             # Fitness dashboard
+python src/main.py zones              # FTP drift check
 ```
 
 ## Project details

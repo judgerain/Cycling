@@ -8,7 +8,7 @@ from pathlib import Path
 
 from intervals_client import IntervalsClient
 
-DATA_DIR = Path(__file__).parent / "data"
+DATA_DIR = Path(__file__).parent.parent / "data"
 
 
 def ensure_data_dir() -> None:

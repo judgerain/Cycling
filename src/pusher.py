@@ -2,12 +2,14 @@
 
 from __future__ import annotations
 
-from analyzer import check_fatigue
+from analyzer import check_fatigue, week_dates
 from display import (
-    bad, bold, header, ok, print_push_preview, warn,
+    bad, bold, header, ok, print_clean_preview, print_push_preview, warn,
 )
 from intervals_client import IntervalsClient
 from models import PlannedWorkout
+
+EXTERNAL_ID_PREFIX = "block-w"
 
 
 def prepare_events(
@@ -52,10 +54,14 @@ def push_week(
         return
 
     events = prepare_events(workouts, fatigue_adjust=True, week=week)
+    current_ids = {w.external_id for w in workouts if w.external_id}
 
     if dry_run:
         print_push_preview(events)
         print(f"\n  {bold('Dry run')} — {len(events)} events would be sent.")
+        stale = clean_week(client, week, current_ids, dry_run=True)
+        if not stale:
+            print("  No stale events to clean.")
         print("  Run without --dry-run to push to Intervals.icu.")
         return
 
@@ -66,6 +72,42 @@ def push_week(
     for e in result:
         status = "updated" if e.get("updated") else "created"
         print(f"    {e.get('start_date_local', '')[:10]} — {e.get('name', '')} [{status}]")
+
+    # Auto-clean stale events
+    stale = clean_week(client, week, current_ids)
+    if stale:
+        print(ok(f"  Cleaned {len(stale)} stale event(s)."))
+
+
+def clean_week(
+    client: IntervalsClient,
+    week: int,
+    current_ids: set[str],
+    dry_run: bool = False,
+) -> list[dict]:
+    """Delete remote events for this week that aren't in current_ids."""
+    monday, sunday = week_dates(week)
+    remote = client.get_events(monday.isoformat(), sunday.isoformat())
+
+    prefix = f"{EXTERNAL_ID_PREFIX}{week}-"
+    stale = [
+        e for e in remote
+        if e.get("external_id", "").startswith(prefix)
+        and e["external_id"] not in current_ids
+    ]
+
+    if not stale:
+        return []
+
+    if dry_run:
+        print_clean_preview(stale)
+        return stale
+
+    for e in stale:
+        client.delete_event(str(e["id"]))
+        print(f"    Deleted: {e.get('start_date_local', '')[:10]} — {e.get('name', '')} [{e['external_id']}]")
+
+    return stale
 
 
 def _normalize_durations(text: str) -> str:

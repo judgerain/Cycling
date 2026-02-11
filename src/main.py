@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 """CLI entry point for the Intervals.icu training integration."""
 
 from __future__ import annotations
@@ -26,7 +28,7 @@ from display import (
 from fetcher import fetch_all
 from intervals_client import IntervalsClient
 from planner import parse_week
-from pusher import push_week
+from pusher import clean_week, push_week
 
 
 def cmd_fetch(args: argparse.Namespace) -> None:
@@ -67,8 +69,25 @@ def cmd_push(args: argparse.Namespace) -> None:
         print(bad(f"No workouts found for week {week}."))
         sys.exit(1)
 
-    client = None if args.dry_run else IntervalsClient()
+    client = IntervalsClient()
     push_week(client, workouts, week, dry_run=args.dry_run)
+
+
+def cmd_clean(args: argparse.Namespace) -> None:
+    week = args.week or current_week_number() + 1
+    workouts = parse_week(week)
+    current_ids = {w.external_id for w in workouts if w.external_id}
+
+    client = IntervalsClient()
+    stale = clean_week(client, week, current_ids, dry_run=args.dry_run)
+
+    if not stale:
+        print(ok(f"No stale events for week {week}."))
+    elif args.dry_run:
+        print(f"\n  {bold('Dry run')} — {len(stale)} event(s) would be deleted.")
+        print("  Run without --dry-run to delete.")
+    else:
+        print(ok(f"  Deleted {len(stale)} stale event(s) for week {week}."))
 
 
 def cmd_status(args: argparse.Namespace) -> None:
@@ -109,17 +128,31 @@ def cmd_zones(args: argparse.Namespace) -> None:
         for zone_name, pct in zones.items():
             watts = int(new_ftp * pct / 100)
             print(f"  {zone_name.upper()}: {pct}% → {watts}W")
-        print(warn(
-            f"\n  To apply: update ftp = {new_ftp} in config.toml "
-            "and training_plan.md"
-        ))
+
+        answer = input(f"\n  Update FTP to {new_ftp}W in config.toml? [y/N] ").strip().lower()
+        if answer in ("y", "yes"):
+            _update_config_ftp(new_ftp)
+            print(ok(f"  Updated config.toml: ftp = {new_ftp}"))
+        else:
+            print("  No changes made.")
+
+
+def _update_config_ftp(new_ftp: int) -> None:
+    """Update the ftp value in config.toml (preserves file structure)."""
+    import re
+    from pathlib import Path
+
+    config_path = Path(__file__).parent.parent / "config.toml"
+    text = config_path.read_text()
+    text = re.sub(r"^(ftp\s*=\s*)\d+", rf"\g<1>{new_ftp}", text, count=1, flags=re.MULTILINE)
+    config_path.write_text(text)
 
 
 def main() -> None:
     parser = argparse.ArgumentParser(
         description="Intervals.icu training integration",
         formatter_class=argparse.RawDescriptionHelpFormatter,
-        epilog="Workflow: fetch → analyze → plan-week --dry-run → push",
+        epilog="Workflow: fetch → analyze → plan-week --dry-run → push | clean",
     )
     sub = parser.add_subparsers(dest="command", required=True)
 
@@ -143,6 +176,11 @@ def main() -> None:
     p_push.add_argument("--week", type=int, help="Week number (default: next week)")
     p_push.add_argument("--dry-run", action="store_true", help="Preview API payloads without sending")
 
+    # clean
+    p_clean = sub.add_parser("clean", help="Remove stale events from Intervals.icu calendar")
+    p_clean.add_argument("--week", type=int, help="Week number (default: next week)")
+    p_clean.add_argument("--dry-run", action="store_true", help="Preview stale events without deleting")
+
     # status
     sub.add_parser("status", help="Quick fitness dashboard")
 
@@ -156,6 +194,7 @@ def main() -> None:
         "analyze": cmd_analyze,
         "plan-week": cmd_plan_week,
         "push": cmd_push,
+        "clean": cmd_clean,
         "status": cmd_status,
         "zones": cmd_zones,
     }

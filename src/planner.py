@@ -8,7 +8,7 @@ from pathlib import Path
 
 from models import PlannedWorkout
 
-PLAN_DIR = Path(__file__).parent / "plan"
+PLAN_DIR = Path(__file__).parent.parent / "plan"
 
 # Maps day names from the markdown tables to weekday indices
 DAY_MAP = {

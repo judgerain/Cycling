@@ -9,7 +9,7 @@ from pathlib import Path
 from models import Activity, WellnessDay, WeekSummary, FitnessSnapshot
 from fetcher import load_json
 
-CONFIG_PATH = Path(__file__).parent / "config.toml"
+CONFIG_PATH = Path(__file__).parent.parent / "config.toml"
 
 
 def load_config() -> dict:

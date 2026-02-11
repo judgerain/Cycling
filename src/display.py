@@ -201,5 +201,18 @@ def print_push_preview(events: list[dict]) -> None:
     print(table(rows, ["Date", "Name", "Type", "External ID"]))
 
 
+def print_clean_preview(stale: list[dict]) -> None:
+    print(header("Clean Preview — Stale Events to Delete"))
+    rows = []
+    for e in stale:
+        rows.append([
+            e.get("start_date_local", "")[:10],
+            e.get("name", ""),
+            e.get("type", ""),
+            e.get("external_id", ""),
+        ])
+    print(table(rows, ["Date", "Name", "Type", "External ID"]))
+
+
 def _day_name(dow: int) -> str:
     return ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"][dow]

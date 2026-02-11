@@ -10,25 +10,22 @@
 
 ## Week 1 (Feb 9–15) — Re-Introduction | ~9h cycling + 2× strength
 
-> **Data update (Feb 11):** CTL 46.9, ATL 37.8, TSB +9.1 (fresh). eFTP 259.6W (Intervals.icu FTP set 263W). Had 7 days off Jan 30–Feb 5, resumed with 3 rides. Tue Feb 10: 2h17m outdoor, TSS 141, NP 206W, 1079m climbing. Recent strong weeks were 10-12h / 500-600 TSS — this volume is proven sustainable.
-
-Back to structured training. Mon/Tue already passed — Tue's outdoor ride counts as this week's endurance volume. Structured sessions shift to Wed+Thu.
+> **Data update (Feb 11, post-ride):** CTL 49.7, ATL 53.8, TSB -4. Two outdoor rides done (Tue + Wed). Wed ride: 1h34m, NP 200W, IF 0.76, TSS 91, 656m elev, HR 133 avg — natural tempo from terrain. Strength skipped Wed. Thu becomes the one structured indoor session this week.
 
 | Day | Session | Duration | Description | Zones |
 |-----|---------|----------|-------------|-------|
-| **Mon 9** | *(no training recorded)* | — | Unplanned rest | — |
-| **Tue 10** | Outdoor ride (completed) | 2h17 | Gijón hilly ride, NP 206W, 1079m elev | Z2 avg, HR 136 |
-| **Wed 11** | Strength AM | 35min | Lower body + core (see strength plan) | — |
-| **Wed 11** | Indoor: Sweet Spot Intro | 60min | First structured SS session | Z2-Z4 (see workout) |
-| **Thu 12** | Indoor: Tempo Intervals | 60min | Building time at tempo, comfortable hard | Z3 (see workout) |
-| **Fri 13** | **REST** | — | Full rest. No training | — |
+| **Mon 9** | *(rest)* | — | No training | — |
+| **Tue 10** | Outdoor ride (done) | 2h17 | Gijón hilly, NP 206W, TSS 141, 1079m elev | Z2 avg, HR 136 |
+| **Wed 11** | Outdoor ride (done) | 1h34 | Caught weather window, NP 200W, TSS 91, 656m | Z2-Z3, HR 133 |
+| **Thu 12** | Indoor: Sweet Spot Intro | 60min | Key structured session of the week — don't skip | Z2-Z4 (see workout) |
+| **Fri 13** | **REST** | — | Full rest. Recovery after 3 training days | — |
 | **Sat 14** | Long outdoor ride | 2h30 | Hilly terrain, steady endurance | Z2 avg, HR < 145 avg |
 | **Sun 15** | Moderate outdoor ride | 1h30 | Enjoy hills, moderate pace | Z2, occasional Z3 on climbs |
-| **Sun 15** | Strength PM | 35min | Lower body + core, afternoon session | — |
+| **Sun 15** | Strength PM | 35min | Only strength session this week — don't skip | — |
 
-> **Week total**: 2h17 (done) + 30min spin + 1h SS + 1h Tempo + 2h30 + 1h30 = ~8h47 cycling.
+> **Week total**: 2h17 + 1h34 (done) + 1h SS + 2h30 + 1h30 = ~9h21 cycling. 1× strength (Sun PM).
 
-### Wednesday — Sweet Spot Intro
+### Thursday — Sweet Spot Intro
 
 ```
 - 10m 55%
@@ -42,22 +39,7 @@ Back to structured training. Mon/Tue already passed — Tue's outdoor ride count
 - 5m 50%
 ```
 
-**Purpose**: Introduce sweet spot (88-90% FTP, 231-237W). Short intervals to get body used to this intensity. Should feel "comfortably hard". Your Rossfeld ride (NP 249W, IF 0.95) shows you can handle this.
-
-### Thursday — Tempo Building Blocks
-
-```
-- 10m 55%
-- 2x
-  - 10m 80%
-  - 5m 55%
-- 2x
-  - 8m 85%
-  - 4m 55%
-- 5m 50%
-```
-
-**Purpose**: Tempo (210-224W) builds muscular endurance — critical for sustained climbing. Longer intervals than Wednesday but lower intensity.
+**Purpose**: Introduce sweet spot (88-90% FTP, 231-237W). Short intervals to get body used to this intensity. Should feel "comfortably hard". Your hilly outdoor rides gave natural Z3 tempo work; this session targets sustained power above tempo. Your Rossfeld ride (NP 249W, IF 0.95) shows you can handle this.
 
 ---
 

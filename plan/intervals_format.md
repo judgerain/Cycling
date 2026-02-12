@@ -35,31 +35,27 @@ Append RPM target: `- 10m 88% 85-95rpm`
 - [label] [duration] [intensity] [cadence]
 ```
 
-Steps use `- ` prefix. Indented steps under a repeat block use `  - ` (two spaces).
+Steps use `- ` prefix. Repeat headers do **NOT** use `- ` prefix.
 
 ## Repeats
 
-```
-- 3x
-  - 5m 100%
-  - 3m 55%
-```
-
-The `Nx` line starts the repeat. Indented lines below are the repeated steps.
-
-## Complete Example
+Repeat count goes on its own line **without** a `- ` prefix. Blank lines before and after the repeat block:
 
 ```
-- Warmup 10m 55%
-- 3x
-  - Work 6m 88% 85-95rpm
-  - Recovery 4m 55%
-- 5m 55%
-- 2x
-  - Work 4m 90%
-  - Recovery 3m 55%
+- 5m 75%
+
+3x
+- 5m 100%
+- 3m 55%
+
 - Cooldown 5m 50%
 ```
+
+**Important rules**:
+- `Nx` line has NO dash prefix (e.g. `3x` not `- 3x`)
+- Blank line before `Nx` and after the last step in the repeat block
+- Steps inside the repeat use normal `- ` prefix (no indentation needed)
+- Nested repeats are NOT supported — flatten inner loops manually
 
 ## Labels (optional)
 
@@ -68,6 +64,25 @@ You can add a label before the duration. Labels are displayed in the workout vie
 ```
 - Warmup 10m 55%
 - Threshold 5m 100%
+- Cooldown 5m 50%
+```
+
+## Complete Example
+
+```
+- Warmup 10m 55%
+- 5m 75%
+
+3x
+- Work 6m 88% 85-95rpm
+- Recovery 4m 55%
+
+- 5m 55%
+
+2x
+- Work 4m 90%
+- Recovery 3m 55%
+
 - Cooldown 5m 50%
 ```
 

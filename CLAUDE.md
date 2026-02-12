@@ -74,8 +74,8 @@ I’d like you to become my new cycling coach and help me create a customized tr
 - I want to analyze and plan trainings
 - My time for training is limited, so I want a plan that prioritizes “bang for buck” workouts—maximizing results in the time I can commit.
 - Format: Provide the plan as a diary with daily workouts, broken down into:
-    - Indoor Workouts: Include a corresponding Rouvy workout in format https://forum.intervals.icu/t/workout-builder/1163.
-    - Outdoor Rides: Keep these simple and enjoyable—no need for constant stat-checking
+    - Indoor Workouts (Rouvy): Include a corresponding workout that matches the session (database here: [Zwift Workouts](https://whatsonzwift.com/workouts)) in format https://forum.intervals.icu/t/workout-builder/1163.
+    - Outdoor Rides: Keep these simple and enjoyable—no need for constant stat-checking if no structure highly needed
 - Limit tests if it is possible. And try track progress from trainings 
 - Let me know how to provide weekly feedback so you can adapt the plan as we go.
 - Present the training plan in a table format for easy reference.

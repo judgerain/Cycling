@@ -23,7 +23,7 @@
 
 ## Week 1 (Feb 9–15) — Re-Introduction | ~9h cycling + 1× strength
 
-> **Data update (Feb 12, post-ride):** CTL 49.3, ATL 51.4, TSB -2. Three rides done (Tue–Thu). Thu indoor SS Ramps: 1h00, avg 193W, TSS 61, HR 136 — SS intervals hit 224-250W range as planned. Week on track: 4h52m / TSS 293 through Thu. Weekend rides remain.
+> **Data update (Feb 14, post-ride):** CTL 49.1, ATL 50.9, TSB -2. Four rides + 1 strength done. Sat moderate ride: 2h00, 153W avg, TSS 88, HR 121 — very easy Z1-Z2. Swapped Sat/Sun: moderate+strength today, long ride Sun (better weather). Week on track: 7h19m / TSS 385 through Sat.
 
 | Day | Session | Duration | Description | Zones |
 |-----|---------|----------|-------------|-------|
@@ -31,12 +31,12 @@
 | **Tue 10** | Outdoor ride (done) | 2h17 | Gijón hilly, NP 206W, TSS 141, 1079m elev | Z2 avg, HR 136 |
 | **Wed 11** | Outdoor ride (done) | 1h34 | Caught weather window, NP 200W, TSS 91, 656m | Z2-Z3, HR 133 |
 | **Thu 12** | Indoor: Sweet Spot Ramps 30min (done) | 1h00 | Zwift: "Sweet Spot Ramps - 30min" — 193W avg, TSS 61, HR 136 | Z2-Z4 |
-| **Fri 13** | **REST** | — | Full rest. Recovery after 3 training days | — |
-| **Sat 14** | Long outdoor ride | 2h30 | Hilly terrain, steady endurance | Z2 avg, HR < 145 |
-| **Sun 15** | Moderate outdoor ride | 1h30 | Enjoy hills, moderate pace | Z2, occasional Z3 on climbs |
-| **Sun 15** | Strength PM | 35min | Only strength session this week — don't skip | — |
+| **Fri 13** | **REST** | — | Full rest | — |
+| **Sat 14** | Moderate outdoor ride (done) | 2h00 | Swapped from Sun. Easy Z1-Z2, 153W avg, TSS 88, HR 121 | Z1-Z2 |
+| **Sat 14** | Strength PM (done) | 26min | Moved from Sun. Light session | — |
+| **Sun 15** | Long outdoor ride | 2h30 | Swapped from Sat — better weather. Hilly terrain, steady endurance | Z2 avg, HR < 145 |
 
-> **Week total**: 2h17 + 1h34 + 1h00 (done) + 2h30 + 1h30 = ~8h51 cycling. 1× strength (Sun PM).
+> **Week total**: 2h17 + 1h34 + 1h00 + 2h00 (done) + 2h30 = ~9h21 cycling. 1× strength (Sat PM).
 
 ### Thursday — Sweet Spot Ramps 30min *(Zwift: "Sweet Spot Ramps - 30min")* | ~50 TSS
 

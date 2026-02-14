@@ -59,16 +59,15 @@
 | Day | Session | Duration | Description | Zones |
 |-----|---------|----------|-------------|-------|
 | **Mon 16** | Strength AM | 35min | Lower body + core | — |
-| **Mon 16** | Easy spin PM (indoor) | 40min | Z1 flush ride | Z1 |
+| **Mon 16** | Easy spin PM (indoor) | 40m | Z1 flush ride | Z1 |
 | **Tue 17** | Indoor: Sweet Spot 12 | 65m | Zwift: "Sweet Spot 12" — 2×12m SS + VO2 finishers | Z3-Z5 (see workout) |
 | **Wed 18** | Easy outdoor/indoor ride | 60m | Z2 ride, keep it conversational | Z2, HR < 142 |
 | **Thu 19** | Indoor: Over-Unders | 66m | Zwift: "Over-Unders & Over-ATS" — lactate clearance | Z3-Z4 (see workout) |
-| **Fri 20** | **REST** | — | Full rest | — |
+| **Fri 20** | Strength | 35min | Lower body + core. No cycling — cycling rest day | — |
 | **Sat 21** | Long outdoor ride | 3h00 | Endurance in hills, steady effort. Bring food | Z2 avg, HR < 145 |
 | **Sun 22** | Moderate outdoor ride | 1h45 | Include 2-3 climbs at moderate pace | Z2-Z3 |
-| **Sun 22** | Strength PM | 35min | Lower body + core, afternoon session | — |
 
-> **Week total**: ~40m + 1h05 + 1h + 1h06 + 3h + 1h45 = ~8h36 cycling + 2× strength.
+> **Week total**: ~40m + 1h05 + 1h + 1h06 + 3h + 1h45 = ~8h36 cycling + 2× strength (Mon + Fri).
 
 ### Tuesday — Sweet Spot 12 *(Zwift: "Sweet Spot 12")* | ~70 TSS
 
@@ -120,12 +119,11 @@
 | **Tue 24** | Indoor: Sweet Spot Pyramid 50min | 72m | Zwift: "Sweet Spot Pyramid - 50min" — 5×10m SS | Z3-Z4 (see workout) |
 | **Wed 25** | Outdoor ride with tempo | 1h30 | Include 2×12m tempo on climbs | Z2 with Z3 efforts |
 | **Thu 26** | Indoor: Norseman Geilo | 67m | Zwift: "Norseman: Geilo" — progressive climbing ramps | Z2-Z5 (see workout) |
-| **Fri 27** | **REST** | — | Full rest | — |
+| **Fri 27** | Strength | 35min | Lower body + core. No cycling — cycling rest day | — |
 | **Sat 28** | Long outdoor ride | 3h30 | Longest ride of block. Hilly terrain, pack food | Z2 avg |
 | **Sun 1** | Moderate outdoor ride | 2h00 | Moderate hills, back-to-back endurance after Sat | Z2 |
-| **Sun 1** | Strength PM | 35min | Lower body + core, afternoon session | — |
 
-> **Week total**: ~40m + 1h12 + 1h30 + 1h07 + 3h30 + 2h = ~10h19 cycling. Target ~12h — extend Sat/Sun if legs feel good.
+> **Week total**: ~40m + 1h12 + 1h30 + 1h07 + 3h30 + 2h = ~10h19 cycling + 2× strength (Mon + Fri). Target ~12h — extend Sat/Sun if legs feel good.
 
 ### Tuesday — Sweet Spot Pyramid 50min *(Zwift: "Sweet Spot Pyramid - 50min")* | ~84 TSS
 
@@ -171,16 +169,16 @@
 
 | Day | Session | Duration | Description | Zones |
 |-----|---------|----------|-------------|-------|
-| **Mon 2** | Light strength (optional) | 25min | Reduce weight, focus on mobility + core | — |
+| **Mon 2** | Light strength | 25min | Reduce weight, focus on mobility + core | — |
 | **Mon 2** | Easy spin (indoor) | 30m | Very easy | Z1 |
 | **Tue 3** | Indoor: Red Day Recovery | 45m | Zwift: "EF Red Day" — light cadence drills | Z1-Z2 (see workout) |
 | **Wed 4** | Easy outdoor/indoor ride | 50m | Easy spin, enjoy | Z2, HR < 140 |
 | **Thu 5** | Easy outdoor ride | 60m | No agenda, just ride | Z2, HR < 140 |
-| **Fri 6** | **REST** | — | Full rest | — |
+| **Fri 6** | Light strength (optional) | 25min | Mobility + core only. No cycling — recovery week | — |
 | **Sat 7** | Moderate outdoor ride | 2h00 | Shorter than previous weeks, relaxed pace | Z2 |
 | **Sun 8** | Easy outdoor ride | 1h00 | Spin out, prepare for next block | Z1-Z2 |
 
-> **Week total**: ~30m + 45m + 50m + 1h + 2h + 1h = ~6h05 cycling. Recovery week — no hard efforts.
+> **Week total**: ~30m + 45m + 50m + 1h + 2h + 1h = ~6h05 cycling + 2× light strength (Mon + Fri). Recovery week — no hard efforts.
 
 ### Tuesday — EF Red Day Recovery *(Zwift: "EF Pro Cycling's Red Day")* | ~30 TSS
 
